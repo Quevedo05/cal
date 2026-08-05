@@ -214,13 +214,13 @@
 
     .hero-image {
       width: 100%;
-      max-width: 220px;
+      max-width: 300px;
       display: block;
     }
 
     @media (min-width: 768px) {
       .hero-image {
-        max-width: 350px;
+        max-width: 480px;
         animation: floatBag 4s ease-in-out infinite;
       }
     }
@@ -425,6 +425,312 @@
       position: absolute;
       left: 0;
       color: var(--gold);
+    }
+
+    /* ========== PRODUCTOS LINE SECTION ========== */
+    .productos-linea {
+      background-color: var(--cream);
+      padding: 6rem 1.5rem;
+    }
+
+    .productos-linea h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .productos-intro {
+      font-size: 1.1rem;
+      color: var(--gold);
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 4rem;
+    }
+
+    .linea-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .linea-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .linea-card {
+      background: white;
+      border: 1px solid var(--border-gray);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .linea-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+
+    .linea-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .linea-card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .linea-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .linea-card:hover .linea-card-img {
+      transform: scale(1.04);
+    }
+
+    .linea-card-img-wrap {
+      overflow: hidden;
+      margin: -2.5rem -2rem 1.5rem;
+    }
+
+    .linea-card h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .linea-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #5A5A5A;
+    }
+
+    /* ========== SECTORES SECTION ========== */
+    .sectores {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f1f35 100%);
+      padding: 6rem 1.5rem;
+      position: relative;
+    }
+
+    .sectores::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+
+    .sectores-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .sectores h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: white;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .sectores-intro {
+      font-size: 1.1rem;
+      color: var(--gold);
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 4rem;
+    }
+
+    .sectores-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .sectores-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .sector-card {
+      position: relative;
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      overflow: hidden;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sector-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .sector-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .sector-card:hover .sector-card-img {
+      transform: scale(1.05);
+    }
+
+    .sector-card-body {
+      padding: 1.8rem;
+      background: rgba(13, 34, 64, 0.92);
+      flex: 1;
+    }
+
+    .sector-card h3 {
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .sector-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .sector-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #ccc;
+    }
+
+    /* ========== POR QUÉ ELEGIRNOS SECTION ========== */
+    .por-que {
+      background-color: var(--cream);
+      padding: 6rem 1.5rem;
+    }
+
+    .por-que h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .por-que-intro {
+      font-size: 1.1rem;
+      color: var(--gold);
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 4rem;
+    }
+
+    .por-que-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .por-que-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .ventaja-card {
+      padding: 2rem;
+      background: white;
+      border: 1px solid var(--border-gray);
+      transition: all var(--transition);
+    }
+
+    .ventaja-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .ventaja-text h3 {
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .ventaja-text p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #5A5A5A;
+    }
+
+    /* ========== WHATSAPP FLOATING BUTTON ========== */
+    .btn-whatsapp {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background-color: #25D366;
+      color: white;
+      padding: 0.8rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      transition: all 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebe5d;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+    }
+
+    .btn-whatsapp svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      .btn-whatsapp span {
+        display: none;
+      }
+      .btn-whatsapp {
+        padding: 0.9rem;
+        border-radius: 50%;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
     }
 
     /* ========== CONTACTO SECTION ========== */
@@ -647,12 +953,12 @@
         </h1>
         <p class="hero-subtitle">Cal Hidratada Premium</p>
         <p class="hero-description">
-          Fabricada en Los Berros, San Juan, Argentina. Producto de calidad industrial para construcción, revoques y pinturas de larga durabilidad.
+          Máxima pureza, máximo rendimiento. Fabricada en Los Berros, San Juan, Argentina. Soluciones de cal para construcción, agroindustria, industria y vial.
         </p>
-        <a href="#contacto" class="btn-primary">Consultar disponibilidad</a>
+        <a href="#productos" class="btn-primary">Ver línea de productos</a>
       </div>
       <div class="hero-image fade-in" style="animation-delay: 0.3s;">
-        <img src="bag-edited.png" alt="Bolsa SIMPLOCAL 25 Kg Cal Hidratada">
+        <img src="Imagen1.png" alt="Bolsa SIMPLOCAL 25 Kg Cal Hidratada">
       </div>
     </div>
   </section>
@@ -666,12 +972,12 @@
       </p>
       <div class="about-text">
         <p>
-          SIMPLOCAL es el resultado de décadas de experiencia en la producción de cal hidratada de calidad superior.
+          SIMPLOCAL es el resultado de la experiencia en la producción de cal hidratada de calidad superior.
           Nuestras instalaciones en Los Berros, San Juan, aprovechan la geografía y los recursos locales para
           ofrecer un producto consistente, seguro y confiable para profesionales de la construcción.
         </p>
         <p>
-          Cada bolsa de 25 Kg es sometida a rigurosos controles de calidad, garantizando excelentes resultados
+          Cada bolsa de 25 Kg es sometida a controles de calidad, garantizando excelentes resultados
           en revoques, morteros, mezclas de pintura y aplicaciones especializadas. Somos industria 100% argentina,
           comprometida con la excelencia y la sustentabilidad.
         </p>
@@ -683,12 +989,16 @@
           <div class="stat-label">Kg por Bolsa</div>
         </div>
         <div class="stat-block fade-in" style="animation-delay: 0.1s;">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Industria Argentina</div>
+          <div class="stat-number">1T</div>
+          <div class="stat-label">Big Bags Disponibles</div>
+        </div>
+        <div class="stat-block fade-in" style="animation-delay: 0.15s;">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Sectores Industriales</div>
         </div>
         <div class="stat-block fade-in" style="animation-delay: 0.2s;">
-          <div class="stat-number">San Juan</div>
-          <div class="stat-label">Los Berros</div>
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Calidad Certificada</div>
         </div>
       </div>
     </div>
@@ -744,6 +1054,101 @@
     </div>
   </section>
 
+  <!-- LÍNEA DE PRODUCTOS SECTION -->
+  <section class="productos-linea" id="productos">
+    <h2 class="fade-in">Línea de <span class="gold-accent">Productos</span></h2>
+    <p class="productos-intro fade-in">Soluciones de cal para cada necesidad</p>
+    <div class="linea-grid">
+      <div class="linea-card fade-in">
+        <div class="linea-card-img-wrap">
+          <img class="linea-card-img" src="15kg.webp" alt="SIMPLOCAL Cal Hidratada Saco 25 Kg">
+        </div>
+        <h3>Sacos de 25 Kg</h3>
+        <p>Ideales para obras y contratistas. Ofrecen una solución práctica y eficiente, asegurando alta pureza y rendimiento constante en cada mezcla.</p>
+      </div>
+      <div class="linea-card fade-in" style="animation-delay: 0.1s;">
+        <div class="linea-card-img-wrap">
+          <img class="linea-card-img" src="1tonelada.png" alt="SIMPLOCAL Cal Hidratada Big Bag 1 Tonelada">
+        </div>
+        <h3>Big Bags de 1 Tonelada</h3>
+        <p>Diseñados para grandes constructoras. Optimizan la logística y permiten un mejor manejo en proyectos de estabilización de suelos e industria.</p>
+      </div>
+      <div class="linea-card fade-in" style="animation-delay: 0.2s;">
+        <div class="linea-card-img-wrap">
+          <img class="linea-card-img" src="lineaagro.webp" alt="SIMPLOCAL Línea Agro">
+        </div>
+        <h3>Línea Agro</h3>
+        <p>Perfectamente formulada para la corrección de pH y enmiendas. Asegura protección efectiva de cultivos, contribuyendo a maximizar la productividad agrícola.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTORES SECTION -->
+  <section class="sectores fade-in" id="sectores">
+    <div class="sectores-content">
+      <h2>Sectores <span class="gold-accent">que Servimos</span></h2>
+      <p class="sectores-intro">Soluciones confiables para industrias exigentes</p>
+      <div class="sectores-grid">
+        <div class="sector-card fade-in">
+          <img class="sector-card-img" src="construccion.jpeg" alt="Sector Construcción">
+          <div class="sector-card-body">
+            <div class="sector-badge">Construcción</div>
+            <h3>Alta Calidad</h3>
+            <p>Soluciones de cal para obras más resistentes, seguras y duraderas. Cal de alta pureza para revoques, morteros y enlucidos.</p>
+          </div>
+        </div>
+        <div class="sector-card fade-in" style="animation-delay: 0.1s;">
+          <img class="sector-card-img" src="agroindustria.jpeg" alt="Sector Agroindustria">
+          <div class="sector-card-body">
+            <div class="sector-badge">Agroindustria</div>
+            <h3>Mejora de Cultivos</h3>
+            <p>Optimización de suelos y aumento de la productividad agrícola mediante la aplicación de cal. Corrección de pH y enmiendas certificadas.</p>
+          </div>
+        </div>
+        <div class="sector-card fade-in" style="animation-delay: 0.2s;">
+          <img class="sector-card-img" src="industria.jpeg" alt="Sector Industria Vial">
+          <div class="sector-card-body">
+            <div class="sector-badge">Industria</div>
+            <h3>Obras Viales</h3>
+            <p>Mejora y estabilización de suelos para caminos, rutas e infraestructura duradera. Soluciones de ingeniería de alta exigencia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS SECTION -->
+  <section class="por-que fade-in" id="por-que">
+    <h2>Por qué <span class="gold-accent">Elegirnos</span></h2>
+    <p class="por-que-intro">Compromiso con la calidad en cada entrega</p>
+    <div class="por-que-grid">
+      <div class="ventaja-card fade-in">
+        <div class="ventaja-text">
+          <h3>Calidad Certificada</h3>
+          <p>Productos con calidad certificada que garantizan pureza y rendimiento superior de la cal, asegurando la satisfacción en cada aplicación y proyecto.</p>
+        </div>
+      </div>
+      <div class="ventaja-card fade-in" style="animation-delay: 0.1s;">
+        <div class="ventaja-text">
+          <h3>Logística Internacional</h3>
+          <p>Garantizamos el abastecimiento eficiente a mercados nacionales e internacionales. Red logística confiable que asegura entregas seguras y oportunas.</p>
+        </div>
+      </div>
+      <div class="ventaja-card fade-in" style="animation-delay: 0.15s;">
+        <div class="ventaja-text">
+          <h3>Alta Pureza</h3>
+          <p>Pureza constante en cada lote, garantizando que los materiales en construcción y otras aplicaciones mantengan su calidad óptima y rendimiento excepcional.</p>
+        </div>
+      </div>
+      <div class="ventaja-card fade-in" style="animation-delay: 0.2s;">
+        <div class="ventaja-text">
+          <h3>Tarifas Preferenciales</h3>
+          <p>Tarifas preferenciales por volumen que permiten a nuestros clientes reducir costos operativos y maximizar sus márgenes de ganancia en cada compra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACTO SECTION -->
   <section class="contacto fade-in" id="contacto">
     <div class="contacto-content">
@@ -773,16 +1178,24 @@
       <div class="contact-info fade-in" style="animation-delay: 0.1s;">
         <h3>Simploin SAS</h3>
         <div class="contact-info-item">
-          <strong>Ubicación</strong>
-          <span>Los Berros, San Juan<br>Argentina</span>
+          <strong>Oficinas Comerciales</strong>
+          <span>Av. Jose Ignacio de la Rosa Oeste 121, 1° Piso<br>Capital, San Juan, Argentina</span>
         </div>
         <div class="contact-info-item">
-          <strong>Descripción</strong>
-          <span>Fabricante de Cal Hidratada para uso industrial y constructivo. Estándares de calidad internacionales.</span>
+          <strong>Planta de Producción</strong>
+          <span>Los Berros, San Juan, Argentina</span>
         </div>
         <div class="contact-info-item">
-          <strong>Compromiso</strong>
-          <span>Industria argentina comprometida con excelencia, sustentabilidad y servicio al cliente.</span>
+          <strong>WhatsApp</strong>
+          <span><a href="https://wa.me/5492644435950" style="color: var(--gold);">+54 9 264 443-5950</a></span>
+        </div>
+        <div class="contact-info-item">
+          <strong>Email</strong>
+          <span><a href="mailto:calsimplocal@gmail.com" style="color: var(--gold);">calsimplocal@gmail.com</a></span>
+        </div>
+        <div class="contact-info-item">
+          <strong>Web</strong>
+          <span><a href="https://simplocal.com.ar" target="_blank" style="color: var(--gold);">simplocal.com.ar</a></span>
         </div>
       </div>
     </div>
@@ -800,6 +1213,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/5492644435950" class="btn-whatsapp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span>Consultar por WhatsApp</span>
+  </a>
 
   <!-- JAVASCRIPT -->
   <script>
@@ -865,26 +1286,43 @@
     statNumbers.forEach(stat => statObserver.observe(stat));
 
     // ========== FORM SUBMISSION ==========
-    document.getElementById('contactForm').addEventListener('submit', (e) => {
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const nombre = document.getElementById('nombre').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const mensaje = document.getElementById('mensaje').value.trim();
+      const form = e.target;
+      const submitBtn = form.querySelector('.form-submit');
+      const feedback = document.getElementById('formFeedback');
 
-      if (nombre && email && mensaje) {
-        // Show feedback message
-        const feedback = document.getElementById('formFeedback');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      try {
+        const response = await fetch('https://formspree.io/f/TU_FORM_ID', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (response.ok) {
+          feedback.textContent = '✓ Gracias por tu mensaje. Nos pondremos en contacto pronto.';
+          feedback.style.borderLeftColor = 'var(--gold)';
+          feedback.classList.add('show');
+          form.reset();
+        } else {
+          feedback.textContent = '✗ Hubo un error al enviar. Por favor escribinos a calsimplocal@gmail.com';
+          feedback.style.borderLeftColor = '#e74c3c';
+          feedback.classList.add('show');
+        }
+      } catch {
+        feedback.textContent = '✗ Sin conexión. Por favor escribinos a calsimplocal@gmail.com';
+        feedback.style.borderLeftColor = '#e74c3c';
         feedback.classList.add('show');
-
-        // Reset form
-        document.getElementById('contactForm').reset();
-
-        // Hide feedback after 4 seconds
-        setTimeout(() => {
-          feedback.classList.remove('show');
-        }, 4000);
       }
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar consulta';
+
+      setTimeout(() => feedback.classList.remove('show'), 6000);
     });
 
     // ========== SMOOTH SCROLL ENHANCEMENT ==========
